@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freja EID</title>
+</head>
+<body>
+    <img src="./top.png" id="top" alt="">
+    <div id="pfpb">
+        <img src="./pfp.png" id="pfp" alt="">
+
+    </div>
+    <div id="at">
+        <div id="ct">
+            <div id="countdown">
+                <p id="cttxt">120</p>
+            </div>
+    </div>
+    </div>
+    <div id="toptext">
+        <p id="giltigt">Giltigt t.o.m.: <b>2069-04-20</b></p>
+        <p class="name">Efternamn: <b>Kuk</b></p>
+        <p class="name">Förnamn: <b>Huvud</b></p>
+        
+        <p class="age">Ålder: <b>120</b></p>
+
+    </div>
+    <div class="spacer"></div>
+    <p id="pnr">010101-9999</p>
+    <div id="qrcontainer">
+        <img id="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=0603288630&color=3d398d" alt="">
+    </div>
+    <p id="info">QR-koden innehåller: personnummer</p>
+    <img id="button" src="btn.png" alt="">
+</body>
+<script>
+    const countdown = document.getElementById("cttxt")
+    let timer = 120
+    setInterval(()=>{
+        timer--
+        countdown.innerText=timer
+        if(timer<1) timer=120
+    }, 1000)
+</script>
+<style>
+
+    @font-face {
+        font-family: normal;
+        src: url(normal.otf) format("opentype");
+    }
+    @font-face {
+        font-family: bold;
+        src: url(bold.otf) format("opentype");
+    }
+    #qr {
+        width: 100%;
+        transform: scale(0.9);
+    }
+    .spacer {
+        margin-top: 30px;
+    }
+    #pnr {
+        font-size: 19px;
+    }
+    #info {
+        margin-top: 42%;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.6)
+    }
+    #button {
+        width: 70%;
+        position: absolute;
+        left: 50%;
+        margin-top: 30px;
+        transform: translate(-50%);
+    }
+    #qrcontainer {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        width: 35vw;
+        height: 35vw;
+        border-radius: 15px;
+        background-color: #fff;
+        overflow: hidden;
+    }
+    p {
+        color: white;
+        font-family: normal;
+        text-align: center;
+    }
+    #toptext {
+
+        letter-spacing: 1px;
+        text-align: center;
+        margin-top: 11vh
+    }
+    #giltigt {
+        font-size: 15px;
+    }
+    p {
+        margin: 10px 0px;
+        font-size: 20px;
+    }
+    b {
+        font-family: bold;
+    }
+    #top {
+        position: absolute;
+        width: 100%;
+        top: 5px;
+        left: -5px;
+    }
+    #pfpb{
+        position: relative;
+        width: 45%;
+        left: 50%;
+        top: 20%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: linear-gradient(320deg, rgba(44,103,171,1) 0%,  #3d83cb 79%, rgba(255,255,255,1) 86%, rgba(255,255,255,1) 100%);
+
+    } 
+    #at {
+        margin-left: 64%;
+        margin-top: -13%;
+        border-radius: 50%;
+        overflow: hidden;
+        width: 16vw;
+        height: 16vw;
+        background: linear-gradient(320deg, rgba(44,103,171,1) 0%,  #3d83cb 69%, rgba(255,255,255,1) 90%, rgba(255,255,255,1) 100%);
+        animation: rotate 1s ease-in-out infinite;
+    }
+    #pfp {
+
+        width: 93%;
+        margin-left: 3.5%;
+        margin-top: 3%;
+        background: rgb(44,103,171);
+        border-radius: 50%;
+    }
+    @keyframes rotate {
+       from {
+           transform: rotate(0deg)
+       }
+       to {
+           transform: rotate(360deg);
+       }
+}
+@keyframes ctrotate {
+       from {
+           transform: rotate(360deg);
+       }
+       to {
+           transform: rotate(0deg);
+       }
+}
+    #countdown {
+        text-align: center;
+        font-size: 23px;
+        color: #fff;
+        font-family: Arial, Helvetica, sans-serif;
+        font-style: bold;
+        position: absolute;
+        top: 0.5vw;
+        left: 0.5vw;
+        background-color: #3d398d;
+        width: 13vw;
+        height: 13vw;
+        border-radius: 50%;
+        animation: ctrotate 1s ease-in-out infinite;
+
+    }
+
+  
+    #it {
+        position: relative;
+    }
+
+    #cttxt {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        padding-top: 27%;
+    }
+    #ct {
+        position: relative;
+        width: 14vw;
+        height: 14vw;
+        margin-top: 1vw;
+        margin-left: 1vw;
+        border-radius: 50%;
+        overflow: hidden;
+        background: linear-gradient(140deg, rgba(44,103,171,1) 0%,  #3d83cb 77%, rgba(255,255,255,1) 89%, rgba(255,255,255,1) 100%);
+
+    }
+
+    body {
+        height: 100vh;
+        overflow: hidden;
+        background: rgb(63,61,144);
+background: linear-gradient(150deg, rgba(63,61,144,1) 0%, rgba(62,131,208,1) 100%);    }
+</style>
+</html>
