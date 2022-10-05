@@ -43,6 +43,21 @@
         countdown.innerText=timer
         if(timer<1) timer=120
     }, 1000)
+    // mozilla proposal
+document.body.requestFullScreen();
+document.cancelFullScreen(); 
+
+// Webkit (works in Safari and Chrome Canary)
+document.body.webkitRequestFullScreen(); 
+document.webkitCancelFullScreen(); 
+
+// Firefox (works in nightly)
+document.body.mozRequestFullScreen();
+document.mozCancelFullScreen(); 
+
+// W3C Proposal
+document.body.requestFullscreen();
+document.exitFullscreen();
 </script>
 <style>
 
